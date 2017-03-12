@@ -4,10 +4,11 @@ from setuptools import setup
 
 
 class UltraMagicString(object):
-    '''
+    """
     Taken from
     http://stackoverflow.com/questions/1162338/whats-the-right-way-to-use-unicode-metadata-in-setup-py
-    '''
+    """
+
     def __init__(self, value):
         self.value = value
 
@@ -25,21 +26,20 @@ class UltraMagicString(object):
 
 
 long_description = UltraMagicString(u'\n\n'.join((
-    file('README.rst').read(),
-    file('CHANGES.rst').read(),
+    open('README.rst').read(),
+    open('CHANGES.rst').read(),
 )))
 
-
 setup(
-    name = 'django-pandora',
-    version = '0.1.0',
-    url = 'https://github.com/gregmuellegger/django-pandora',
-    license = 'BSD',
-    description = "Opening Pandora's box by making django's request object available in a thread local.",
-    long_description = long_description,
-    author = UltraMagicString('Gregor Müllegger'),
-    author_email = 'gregor@muellegger.de',
-    classifiers = [
+    name='django-pandora',
+    version='0.1.0',
+    url='https://github.com/gregmuellegger/django-pandora',
+    license='BSD',
+    description="Opening Pandora's box by making django's request object available in a thread local.",
+    long_description=long_description,
+    author=UltraMagicString('Gregor Müllegger'),
+    author_email='gregor@muellegger.de',
+    classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
@@ -49,10 +49,9 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
     ],
-    packages = [
+    packages=[
         'pandora',
     ],
-    install_requires = ['setuptools'],
-    test_suite = 'runtests.runtests',
+    install_requires=['setuptools'],
+    test_suite='runtests.runtests',
 )
-

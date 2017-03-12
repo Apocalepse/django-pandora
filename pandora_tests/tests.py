@@ -49,7 +49,7 @@ class BoxTests(TestCase):
 
 
 class MultiThreadedTests(TestCase):
-    '''
+    """
     Please contribute a patch if you know how to easily test the multithreaded
     behaviour of pandora's box.
-    '''
+    """

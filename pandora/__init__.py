@@ -1,4 +1,4 @@
-'''
+"""
 This is Pandora's box. Don't open it if you cannot live with the
 consequences.
 
@@ -20,9 +20,13 @@ not set yet for the current thread. You can use the dict's get method to
 return a sensible default if the key is not available:
 
 >>> user = box.get('user', AnonymousUser())
-'''
+"""
 
-from UserDict import UserDict
+try:
+    from UserDict import UserDict
+except ImportError:
+    from collections import UserDict
+
 try:
     from threading import local
 except ImportError:
@@ -30,14 +34,14 @@ except ImportError:
 
 
 class Box(UserDict):
-    '''
+    """
     Be aware ... you are about to let all the evil into your application!
 
     ``Box`` is a dict-like object that stores its content in a thread local.
 
     You can use this to store global variables like django's request in a
     context that is only accessible by the current thread.
-    '''
+    """
     def __init__(self):
         self._local = local()
         self.data = self._local.__dict__
