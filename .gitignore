@@ -1,0 +1,16 @@
+*.py[cod]
+*.egg
+*.egg-info
+dist
+build
+eggs
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+# Pycharm
+.idea
